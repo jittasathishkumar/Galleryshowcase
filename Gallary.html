@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <style>
+    
+        img{
+            height: 30rem;
+            width: 20rem;
+        }
+        body{
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            background: #dcd4d4;
+        }
+        .gallary{
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 1em;
+            place-content: center;
+            padding-left: 5em;
+        }
+        .box{
+            position: relative;
+            background: var(--img) center center; 
+            background-size: cover;
+            transition: all 400ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallary:hover .box{
+            filter: grayscale(100%) opacity(24%);
+        }
+        .gallary .box:hover{
+            filter: grayscale(0%); opacity: (100%);
+        }
+        .gallary:has(.box-1:hover){
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+        .gallary:has(.box-2:hover){
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+        .gallary:has(.box-3:hover){
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+        .gallary:has(.box-4:hover){
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+        }
+        .box:nth-child(even){
+            transform: translate(-16px);
+        }
+        .box:nth-child(odd){
+            transform: translate(-16px);
+        }
+        .box::after{
+            content: attr(data-text);
+            position: absolute;
+            bottom: 20px;
+            background-color: #dcd4d4;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+            transform: translateY(60px);
+            opacity: 0;
+            transition: all 400ms;
+        }
+        .box:hover::after{
+            transform: translateY(0);
+        }
+    </style>
+    <body>
+        <div class="gallary">
+            <div class="box box-1">
+                <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_w_800,q_50/lsci/db/PICTURES/CMS/348100/348106.jpg">
+            </div>
+            <div class="box box-2">
+                <img src="https://i3.wp.com/ss-i.thgim.com/public/incoming/nrvobc/article67472917.ece/alternates/PORTRAIT_1200/2023-10-14T114416Z_1184443389_UP1EJAE0WLR5J_RTRMADP_3_CRICKET-WORLDCUP-IND-PAK.JPG?strip=alls">
+            </div>
+           <div class="box box-3">
+                <img src="https://resize.indiatvnews.com/en/resize/newbucket/1080_-/2023/10/untitled-design-2023-10-19t184623-1697721609.jpg">
+           </div>
+            <div class="box box-4">
+                <img src="https://resize.indiatvnews.com/en/resize/newbucket/1080_-/2023/09/untitled-design-2023-09-17t182933-1694955634.jpg">
+            </div>
+        </div>
+    </body>
+</html>
